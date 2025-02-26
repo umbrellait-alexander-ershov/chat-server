@@ -1,13 +1,8 @@
 import { Injectable, UnauthorizedException } from '@nestjs/common';
-import { UserService } from '../user/user.service';
-import { LoginDto } from './dto/login.dto';
-import {
-  comparePasswords,
-  hashPassword,
-  setCookieForToken,
-} from './utils/data';
+import { UserService } from '../user';
+import { LoginDto, CreateProfileDto } from './dto';
+import { comparePasswords, hashPassword, setCookieForToken } from './utils';
 import { JwtService } from '@nestjs/jwt';
-import { CreateProfileDto } from './dto/create-profile.dto';
 
 import { Request, Response } from 'express';
 
@@ -34,6 +29,7 @@ export class AuthService {
   }
 
   async login(loginDto: LoginDto, res: Response) {
+    console.log(loginDto);
     const { email, password } = loginDto;
 
     const targetUser = await this.userService.getUserByEmail(email);
@@ -108,7 +104,7 @@ export class AuthService {
 
       const newRefreshToken = await this.generateRefreshToken(payload.userId);
       setCookieForToken(newRefreshToken, res);
-    } catch (error) {
+    } catch {
       throw new UnauthorizedException('Refresh token is not active');
     }
   }

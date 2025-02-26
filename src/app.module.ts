@@ -1,10 +1,13 @@
 import { Module } from '@nestjs/common';
-import { UserModule } from './modules/user/user.module';
+import {
+  UserModule,
+  ReactionModule,
+  PostModule,
+  AuthModule,
+  CommentModule,
+} from './modules';
 import { MongooseModule } from '@nestjs/mongoose';
-import { AuthModule } from './modules/auth/auth.module';
-import { PostModule } from './modules/post/post.module';
-import { CommentModule } from './modules/comment/comment.module';
-import { ReactionModule } from './modules/reaction/reaction.module';
+import { FriendModule } from './modules/friend/friend.module';
 
 @Module({
   imports: [
@@ -14,6 +17,7 @@ import { ReactionModule } from './modules/reaction/reaction.module';
     PostModule,
     CommentModule,
     ReactionModule,
+    FriendModule,
   ],
 })
 export class AppModule {}

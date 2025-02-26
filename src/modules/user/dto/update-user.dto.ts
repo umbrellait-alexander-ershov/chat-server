@@ -47,5 +47,5 @@ export class UpdateUserDto {
     type: String,
     description: 'User birthday',
   })
-  birthday: String;
+  birthday: string;
 }

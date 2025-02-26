@@ -13,7 +13,7 @@ export async function comparePasswords(
 ): Promise<boolean> {
   try {
     return await bcrypt.compare(password, hashedPassword);
-  } catch (error) {
+  } catch {
     throw new UnauthorizedException(`Comparing ${password} failed`);
   }
 }

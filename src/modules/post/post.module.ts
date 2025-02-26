@@ -2,9 +2,9 @@ import { Module } from '@nestjs/common';
 import { PostController } from './post.controller';
 import { PostService } from './post.service';
 import { MongooseModule } from '@nestjs/mongoose';
-import { Post, PostSchema } from './post.model';
-import { UserModule } from '../user/user.module';
-import { ReactionModule } from '../reaction/reaction.module';
+import { Post, PostSchema } from './entites';
+import { UserModule } from '../user';
+import { ReactionModule } from '../reaction';
 
 @Module({
   imports: [

@@ -5,11 +5,11 @@ import {
   NotFoundException,
 } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { Post } from './post.model';
+import { Post } from './entites';
 import { Model } from 'mongoose';
 import { AddReactionDto, CreatePostDto } from './dto';
-import { UserService } from '../user/user.service';
-import { ReactionService } from '../reaction/reaction.service';
+import { UserService } from '../user';
+import { ReactionService } from '../reaction';
 import { reactionMap } from './post.constants';
 
 @Injectable()

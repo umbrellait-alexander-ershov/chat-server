@@ -14,4 +14,4 @@ export class Reaction {
 }
 
 export const ReactionSchema = SchemaFactory.createForClass(Reaction);
-ReactionSchema.index({ user: 1, post: 1 }, { unique: true });
+ReactionSchema.index({ userId: 1, postId: 1 }, { unique: true });

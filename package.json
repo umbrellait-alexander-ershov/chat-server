@@ -30,6 +30,7 @@
     "bcrypt": "^5.1.1",
     "class-validator": "^0.14.1",
     "cookie-parser": "^1.4.7",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
     "mongoose": "^8.10.1",
     "passport": "^0.7.0",
     "passport-jwt": "^4.0.1",

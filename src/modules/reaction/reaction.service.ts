@@ -1,8 +1,8 @@
 import { HttpStatus, Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { Reaction } from './reaction.model';
+import { Reaction } from './entites';
 import { Model } from 'mongoose';
-import { AddReactionOnPostDto } from './dto/add-reaction-on-post.dto';
+import { AddReactionOnPostDto } from './dto';
 
 @Injectable()
 export class ReactionService {
@@ -47,6 +47,4 @@ export class ReactionService {
       message: 'Added reaction',
     };
   }
-
-  async deleteReactionWithPost() {}
 }
