@@ -29,7 +29,6 @@ export class AuthService {
   }
 
   async login(loginDto: LoginDto, res: Response) {
-    console.log(loginDto);
     const { email, password } = loginDto;
 
     const targetUser = await this.userService.getUserByEmail(email);
